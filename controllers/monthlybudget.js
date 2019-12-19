@@ -6,7 +6,7 @@ const monthlyBudgetRouter = express.Router();
 
 monthlyBudgetRouter.get("/", (req, res) => {
   monthlyBudgetApi
-    .getAllmonthlyBudget()
+    .getAllMonthlyBudget()
     .then(allmonthlyBudget => {
       res.render("monthlyBudget/allmonthlyBudget", { allmonthlyBudget });
     })
@@ -23,7 +23,7 @@ monthlyBudgetRouter.get("/new", (req, res) => {
 
 monthlyBudgetRouter.get("/:id/edit", (req, res) => {
   monthlyBudgetApi
-    .getmonthlyBudgetById(req.params.id)
+    .getMonthlyBudgetById(req.params.id)
     .then(monthlyBudget => {
       res.render("monthlyBudget/editmonthlyBudget", { monthlyBudget });
     })
@@ -36,7 +36,7 @@ monthlyBudgetRouter.get("/:id/edit", (req, res) => {
 monthlyBudgetRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
   monthlyBudgetApi
-    .getmonthlyBudgetById(req.params.id)
+    .getMonthlyBudgetById(req.params.id)
     .then(singlemonthlyBudget => {
       res.render("monthlyBudget/singlemonthlyBudget", { singlemonthlyBudget });
     })
@@ -51,7 +51,7 @@ monthlyBudgetRouter.post("/", (req, res) => {
   const newmonthlyBudget = req.body;
 
   monthlyBudgetApi
-    .createmonthlyBudget(newmonthlyBudget)
+    .createMonthlyBudget(newmonthlyBudget)
     .then(() => {
       res.redirect("/monthlyBudget");
     })
@@ -66,7 +66,7 @@ monthlyBudgetRouter.put("/:id", (req, res) => {
   const monthlyBudgetData = req.body;
 
   monthlyBudgetApi
-    .updatemonthlyBudget(monthlyBudgetId, monthlyBudgetData)
+    .updateMonthlyBudget(monthlyBudgetId, monthlyBudgetData)
     .then(() => {
       res.redirect(`/monthlyBudget/${monthlyBudgetId}`);
     })
@@ -78,7 +78,7 @@ monthlyBudgetRouter.put("/:id", (req, res) => {
 
 monthlyBudgetRouter.delete("/:id", (req, res) => {
   monthlyBudgetApi
-    .deletemonthlyBudget(req.params.id)
+    .deleteMonthlyBudget(req.params.id)
     .then(() => {
       res.redirect("/monthlyBudget");
     })

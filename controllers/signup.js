@@ -6,7 +6,7 @@ const signUpRouter = express.Router();
 
 signUpRouter.get("/", (req, res) => {
   signUpApi
-    .getAllsignUp()
+    .getAllSignUp()
     .then(allsignUp => {
       res.render("signUp/allsignUp", { allsignUp });
     })
@@ -23,7 +23,7 @@ signUpRouter.get("/new", (req, res) => {
 
 signUpRouter.get("/:id/edit", (req, res) => {
   signUpApi
-    .getsignUpById(req.params.id)
+    .getSignUpById(req.params.id)
     .then(signUp => {
       res.render("signUp/editsignUp", { signUp });
     })
@@ -36,7 +36,7 @@ signUpRouter.get("/:id/edit", (req, res) => {
 signUpRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
   signUpApi
-    .getsignUpById(req.params.id)
+    .getSignUpById(req.params.id)
     .then(singlesignUp => {
       res.render("signUp/singlesignUp", { singlesignUp });
     })
@@ -51,7 +51,7 @@ signUpRouter.post("/", (req, res) => {
   const newsignUp = req.body;
 
   signUpApi
-    .createsignUp(newsignUp)
+    .createSignUp(newsignUp)
     .then(() => {
       res.redirect("/signUp");
     })
@@ -66,7 +66,7 @@ signUpRouter.put("/:id", (req, res) => {
   const signUpData = req.body;
 
   signUpApi
-    .updatesignUp(signUpId, signUpData)
+    .updateSignUp(signUpId, signUpData)
     .then(() => {
       res.redirect(`/signUp/${signUpId}`);
     })
@@ -78,7 +78,7 @@ signUpRouter.put("/:id", (req, res) => {
 
 signUpRouter.delete("/:id", (req, res) => {
   signUpApi
-    .deletesignUp(req.params.id)
+    .deleteSignUp(req.params.id)
     .then(() => {
       res.redirect("/signUp");
     })

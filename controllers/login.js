@@ -6,7 +6,7 @@ const loginRouter = express.Router();
 
 loginRouter.get("/", (req, res) => {
   loginApi
-    .getAlllogin()
+    .getAllLogin()
     .then(alllogin => {
       res.render("login/alllogin", { alllogin });
     })
@@ -23,7 +23,7 @@ loginRouter.get("/new", (req, res) => {
 
 loginRouter.get("/:id/edit", (req, res) => {
   loginApi
-    .getloginById(req.params.id)
+    .getLoginById(req.params.id)
     .then(login => {
       res.render("login/editlogin", { login });
     })
@@ -36,7 +36,7 @@ loginRouter.get("/:id/edit", (req, res) => {
 loginRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
   loginApi
-    .getloginById(req.params.id)
+    .getLoginById(req.params.id)
     .then(singlelogin => {
       res.render("login/singlelogin", { singlelogin });
     })
@@ -51,7 +51,7 @@ loginRouter.post("/", (req, res) => {
   const newlogin = req.body;
 
   loginApi
-    .createlogin(newlogin)
+    .createLogin(newlogin)
     .then(() => {
       res.redirect("/login");
     })
@@ -66,7 +66,7 @@ loginRouter.put("/:id", (req, res) => {
   const loginData = req.body;
 
   loginApi
-    .updatelogin(loginId, loginData)
+    .updateLogin(loginId, loginData)
     .then(() => {
       res.redirect(`/login/${loginId}`);
     })
@@ -78,7 +78,7 @@ loginRouter.put("/:id", (req, res) => {
 
 loginRouter.delete("/:id", (req, res) => {
   loginApi
-    .deletelogin(req.params.id)
+    .deleteLogin(req.params.id)
     .then(() => {
       res.redirect("/login");
     })

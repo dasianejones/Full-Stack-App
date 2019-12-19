@@ -51,7 +51,7 @@ bankInfoRouter.post("/", (req, res) => {
   const newbankInfo = req.body;
 
   bankInfoApi
-    .createbankInfo(newbankInfo)
+    .createBankInfo(newbankInfo)
     .then(() => {
       res.redirect("/bankInfo");
     })
@@ -66,7 +66,7 @@ bankInfoRouter.put("/:id", (req, res) => {
   const bankInfoData = req.body;
 
   bankInfoApi
-    .updatebankInfo(bankInfoId, bankInfoData)
+    .updateBankInfo(bankInfoId, bankInfoData)
     .then(() => {
       res.redirect(`/bankInfo/${bankInfoId}`);
     })
@@ -78,7 +78,7 @@ bankInfoRouter.put("/:id", (req, res) => {
 
 bankInfoRouter.delete("/:id", (req, res) => {
   bankInfoApi
-    .deletebankInfo(req.params.id)
+    .deleteBankInfo(req.params.id)
     .then(() => {
       res.redirect("/bankInfo");
     })

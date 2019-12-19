@@ -6,7 +6,7 @@ const welcomeRouter = express.Router();
 
 welcomeRouter.get("/", (req, res) => {
   welcomeApi
-    .getAllwelcome()
+    .getAllWelcome()
     .then(allwelcome => {
       res.render("welcome/allwelcome", { allwelcome });
     })
@@ -23,7 +23,7 @@ welcomeRouter.get("/new", (req, res) => {
 
 welcomeRouter.get("/:id/edit", (req, res) => {
   welcomeApi
-    .getwelcomeById(req.params.id)
+    .getWelcomeById(req.params.id)
     .then(welcome => {
       res.render("welcome/editwelcome", { welcome });
     })
@@ -36,7 +36,7 @@ welcomeRouter.get("/:id/edit", (req, res) => {
 welcomeRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
   welcomeApi
-    .getwelcomeById(req.params.id)
+    .getWelcomeById(req.params.id)
     .then(singlewelcome => {
       res.render("welcome/singlewelcome", { singlewelcome });
     })
@@ -51,7 +51,7 @@ welcomeRouter.post("/", (req, res) => {
   const newwelcome = req.body;
 
   welcomeApi
-    .createwelcome(newwelcome)
+    .createWelcome(newwelcome)
     .then(() => {
       res.redirect("/welcome");
     })
@@ -66,7 +66,7 @@ welcomeRouter.put("/:id", (req, res) => {
   const welcomeData = req.body;
 
   welcomeApi
-    .updatewelcome(welcomeId, welcomeData)
+    .updateWelcome(welcomeId, welcomeData)
     .then(() => {
       res.redirect(`/welcome/${welcomeId}`);
     })
@@ -78,7 +78,7 @@ welcomeRouter.put("/:id", (req, res) => {
 
 welcomeRouter.delete("/:id", (req, res) => {
   welcomeApi
-    .deletewelcome(req.params.id)
+    .deleteWelcome(req.params.id)
     .then(() => {
       res.redirect("/welcome");
     })
