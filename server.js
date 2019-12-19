@@ -17,7 +17,12 @@ const methodOverride = require("method-override");
  * import routers from controllers/
  *
  */
-const { issuesRouter } = require("./controllers/issues.js");
+
+const { bankInfoRouter } = require("./controllers/bankinfo.js");
+const { loginRouter } = require("./controllers/login.js");
+const { monthlyBudgetRouter } = require("./controllers/monthlybudget.js");
+const { signUpRouter } = require("./controllers/signup.js");
+const { welcomeRouter } = require("./controllers/welcome.js");
 
 /* Step 3
  *
@@ -59,7 +64,11 @@ app.set("view engine", "hbs");
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use("/issues", issuesRouter);
+app.use("/bankinfo", bankInfoRouter);
+app.use("/login", loginRouter);
+app.use("/monthlybudget", monthlyBudgetRouter);
+app.use("/signup", signUpRouter);
+app.use("/welcome", welcomeRouter);
 
 /* Step 5
  *
