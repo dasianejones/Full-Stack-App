@@ -64,6 +64,11 @@ app.set("view engine", "hbs");
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
+
+app.get("/", (req, res) => {
+  res.redirect("/bankinfo");
+});
+
 app.use("/bankinfo", bankInfoRouter);
 app.use("/login", loginRouter);
 app.use("/monthlybudget", monthlyBudgetRouter);
