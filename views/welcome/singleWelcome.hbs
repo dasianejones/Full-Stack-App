@@ -1,19 +1,16 @@
-<h2>Description:</h2>
-<div>{{singleIssues.description}}</div>
+<h2>Country:</h2>
+<div>{{singleWelcome.country}}</div>
 
-<h2>Created At:</h2>
-<div>{{singleIssues.createdAt}}</div>
+<h2>State:</h2>
+<div>{{singleWelcome.state}}</div>
 
-<h2>Status:</h2>
-<div>{{singleIssues.status}}</div>
+<h2>Zip Code:</h2>
+<div>{{singleWelcome.zipcode}}</div>
 
-<h2>Priority:</h2>
-<div>{{singleIssues.priority}}</div>
-
-<form method="POST" action="/issues/{{singleIssues._id}}?_method=DELETE">
-    <input type="submit" value="Delete Issues">
+<form method="POST" action="/Welcome/{{singleWelcome._id}}?_method=DELETE">
+    <input type="submit" value="Delete Welcome">
 </form>
 
-<a href="/issues/{{singleIssues._id}}/edit">
-    <button>Edit Issues</button>
+<a href="/Welcome/{{singleWelcome._id}}/edit">
+    <button>Edit Welcome</button>
 </a>

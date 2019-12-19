@@ -1,14 +1,12 @@
-<h1>Edit Issues</h1>
+<h1>Edit Welcome</h1>
 
-<form method="POST" action="/issues/{{issues._id}}?_method=PUT">
+<form method="POST" action="/Welcome/{{Welcome._id}}?_method=PUT">
 
-  <input type="text" placeholder="description" name="description" value="{{issues.description}}" />
+  <input type="text" placeholder="country" name="country" value="{{Welcome.country}}" />
 
-  <input type="date" placeholder="createdAt" name="createdAt" value="{{issues.createdAt}}" />
+  <input type="date" placeholder="state" name="state" value="{{Welcome.state}}" />
 
-  <input type="text" placeholder="status" name="status" value="{{issues.status}}" />
-
-  <input type="text" placeholder="priority" name="priortiy" value="{{issues.priority}}" />
+  <input type="text" placeholder="zipcode" name="zipcode" value="{{Welcome.zipcode}}" />
 
   <input type="submit" value="Save" />
 </form>
