@@ -1,0 +1,26 @@
+<h1>Create Bank Info</h1>
+
+<form method="POST" action="/bankInfo">
+
+
+  <div class="bankInfoVariables">
+
+    <label for="bankInfoDescription">Bank Name</label>
+    <input type="text" value="" placeholder="bankname" name="bankname" id="bankname" />
+
+    <label for="bankInfoCreatedAt">Bank Account</label>
+    <input type="text" value="" placeholder="bankaccount" name="bankaccount" id="bankaccount" />
+
+    <label for="bankInfoStatus">Bank Routing</label>
+    <input type="text" value="" name="bankrouting" id="bankrouting" />
+
+    <input type="submit" value="Create bankInfo" id="submit_btn" />
+
+  </div>
+
+
+</form>
+
+bankname: String,
+bankaccount: Number,
+bankrouting: Number

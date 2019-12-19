@@ -1,0 +1,17 @@
+<h2>Bank Name:</h2>
+<div>{{singlebankInfo.bankname}}</div>
+
+<h2>Bank Account:</h2>
+<div>{{singlebankInfo.bankaccount}}</div>
+
+<h2>Bank Routing:</h2>
+<div>{{singlebankInfo.bankrouting}}</div>
+
+
+<form method="POST" action="/bankInfo/{{singlebankInfo._id}}?_method=DELETE">
+    <input type="submit" value="Delete bankInfo">
+</form>
+
+<a href="/bankInfo/{{singlebankInfo._id}}/edit">
+    <button>Edit bankInfo</button>
+</a>
