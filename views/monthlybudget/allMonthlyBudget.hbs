@@ -1,24 +1,24 @@
-<h1>All Issues</h1>
+<h1>All Monthly Budget</h1>
 
-<a href="/issues/new">
+<a href="/MonthlyBudget/new">
     <div class="newbtn">
         <div style="text-align:center;">
-            <button type="button" class="issues_btn">New Issues</button>
+            <button type="button" class="MonthlyBudget_btn">New MonthlyBudget</button>
         </div>
     </div>
 </a>
 </a>
 
 <ul>
-    {{#each allIssues}}
+    {{#each allMonthlyBudget}}
 
     <li>
-        <a href="/issues/{{_id}}">
-            {{description}}
+        <a href="/MonthlyBudget/{{_id}}">
+            {{monthlyincome}}
         </a>
-        <h3>{{createdAt}}</h3>
-        <h3>{{status}}</h3>
-        <h3>{{priority}}</h3>
+        <h3>{{monthlyexpenses}}</h3>
+        <h3>{{monthlybudget}}</h3>
+
     </li>
 
     {{/each}}
