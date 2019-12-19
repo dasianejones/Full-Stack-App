@@ -1,19 +1,16 @@
-<h2>Description:</h2>
-<div>{{singleIssues.description}}</div>
+<h2>Email:</h2>
+<div>{{singlesignUp.email}}</div>
 
-<h2>Created At:</h2>
-<div>{{singleIssues.createdAt}}</div>
+<h2>Phone Number:</h2>
+<div>{{singlesignUp.phonenumber}}</div>
 
-<h2>Status:</h2>
-<div>{{singleIssues.status}}</div>
+<h2>Password:</h2>
+<div>{{singlesignUp.password}}</div>
 
-<h2>Priority:</h2>
-<div>{{singleIssues.priority}}</div>
-
-<form method="POST" action="/issues/{{singleIssues._id}}?_method=DELETE">
-    <input type="submit" value="Delete Issues">
+<form method="POST" action="/signUp/{{singlesignUp._id}}?_method=DELETE">
+    <input type="submit" value="Delete signUp">
 </form>
 
-<a href="/issues/{{singleIssues._id}}/edit">
-    <button>Edit Issues</button>
+<a href="/signUp/{{singlesignUp._id}}/edit">
+    <button>Edit signUp</button>
 </a>
