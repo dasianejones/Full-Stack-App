@@ -18,8 +18,8 @@ const getWelcomeById = id => {
   return welcomeCollection.findById(id);
 };
 
-const createWelcome = WelcomeObject => {
-  return welcomeCollection.create(WelcomeObject);
+const createWelcome = welcomeObject => {
+  return welcomeCollection.create(welcomeObject);
 };
 
 const deleteWelcome = id => {

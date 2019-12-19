@@ -1,12 +1,12 @@
 <h1>Edit Welcome</h1>
 
-<form method="POST" action="/Welcome/{{Welcome._id}}?_method=PUT">
+<form method="POST" action="/Welcome/{{welcome._id}}?_method=PUT">
 
-  <input type="text" placeholder="country" name="country" value="{{Welcome.country}}" />
+  <input type="text" placeholder="country" name="country" value="{{welcome.country}}" />
 
-  <input type="text" placeholder="state" name="state" value="{{Welcome.state}}" />
+  <input type="text" placeholder="state" name="state" value="{{welcome.state}}" />
 
-  <input type="text" placeholder="zipcode" name="zipcode" value="{{Welcome.zipcode}}" />
+  <input type="text" placeholder="zipcode" name="zipcode" value="{{welcome.zipcode}}" />
 
   <input type="submit" value="Save" />
 </form>
