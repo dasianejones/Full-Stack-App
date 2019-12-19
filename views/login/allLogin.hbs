@@ -1,24 +1,24 @@
-<h1>All Issues</h1>
+<h1>All Login</h1>
 
-<a href="/issues/new">
+<a href="/Login/new">
     <div class="newbtn">
         <div style="text-align:center;">
-            <button type="button" class="issues_btn">New Issues</button>
+            <button type="button" class="Login_btn">New Login</button>
         </div>
     </div>
 </a>
 </a>
 
 <ul>
-    {{#each allIssues}}
+    {{#each allLogin}}
 
     <li>
-        <a href="/issues/{{_id}}">
-            {{description}}
+        <a href="/Login/{{_id}}">
+            {{email}}
         </a>
-        <h3>{{createdAt}}</h3>
-        <h3>{{status}}</h3>
-        <h3>{{priority}}</h3>
+
+        <h3>{{password}}</h3>
+
     </li>
 
     {{/each}}
