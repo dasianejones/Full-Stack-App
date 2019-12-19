@@ -3,10 +3,9 @@ const mongoose = require("./connection");
 const Schema = mongoose.Schema;
 
 const SignupSchema = new Schema({
-  description: String,
-  createdAt: Date,
-  status: String,
-  priority: String
+  signupfree: String,
+  learnmore: String,
+  signin: String
 });
 
 const SignupCollection = mongoose.model("Signup", SignupSchema);
