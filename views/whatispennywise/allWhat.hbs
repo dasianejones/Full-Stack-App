@@ -1,0 +1,25 @@
+<h1>All Issues</h1>
+
+<a href="/issues/new">
+    <div class="newbtn">
+        <div style="text-align:center;">
+            <button type="button" class="issues_btn">New Issues</button>
+        </div>
+    </div>
+</a>
+</a>
+
+<ul>
+    {{#each allIssues}}
+
+    <li>
+        <a href="/issues/{{_id}}">
+            {{description}}
+        </a>
+        <h3>{{createdAt}}</h3>
+        <h3>{{status}}</h3>
+        <h3>{{priority}}</h3>
+    </li>
+
+    {{/each}}
+</ul>
