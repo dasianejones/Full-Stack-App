@@ -6,7 +6,7 @@ const bankInfoRouter = express.Router();
 
 bankInfoRouter.get("/", (req, res) => {
   bankInfoApi
-    .getAllbankInfo()
+    .getAllBankInfo()
     .then(allbankInfo => {
       res.render("bankInfo/allbankInfo", { allbankInfo });
     })
