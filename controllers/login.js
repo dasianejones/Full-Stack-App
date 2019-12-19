@@ -1,31 +1,31 @@
 const express = require("express");
 
-const issuesApi = require("../models/issues.js");
+const loginApi = require("../models/login.js");
 
-const issuesRouter = express.Router();
+const loginRouter = express.Router();
 
-issuesRouter.get("/", (req, res) => {
-  issuesApi
-    .getAllIssues()
-    .then(allIssues => {
-      res.render("issues/allIssues", { allIssues });
+loginRouter.get("/", (req, res) => {
+  loginApi
+    .getAlllogin()
+    .then(alllogin => {
+      res.render("login/alllogin", { alllogin });
     })
     .catch(error => {
-      console.log("Error getting all issues");
+      console.log("Error getting all login");
       console.log(error);
       res.send(error);
     });
 });
 
-issuesRouter.get("/new", (req, res) => {
-  res.render("issues/createIssues");
+loginRouter.get("/new", (req, res) => {
+  res.render("login/createlogin");
 });
 
-issuesRouter.get("/:id/edit", (req, res) => {
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(issues => {
-      res.render("issues/editIssues", { issues });
+loginRouter.get("/:id/edit", (req, res) => {
+  loginApi
+    .getloginById(req.params.id)
+    .then(login => {
+      res.render("login/editlogin", { login });
     })
     .catch(error => {
       console.log(error);
@@ -33,42 +33,27 @@ issuesRouter.get("/:id/edit", (req, res) => {
     });
 });
 
-issuesRouter.get("/:id", (req, res) => {
+loginRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(singleIssues => {
-      res.render("issues/singleIssues", { singleIssues });
+  loginApi
+    .getloginById(req.params.id)
+    .then(singlelogin => {
+      res.render("login/singlelogin", { singlelogin });
     })
     .catch(error => {
-      console.log("Error getting single issues");
+      console.log("Error getting single login");
       console.log(error);
-      res.send("Failed to retrieve issues");
+      res.send("Failed to retrieve login");
     });
 });
 
-issuesRouter.post("/", (req, res) => {
-  const newIssues = req.body;
+loginRouter.post("/", (req, res) => {
+  const newlogin = req.body;
 
-  issuesApi
-    .createIssues(newIssues)
+  loginApi
+    .createlogin(newlogin)
     .then(() => {
-      res.redirect("/issues");
-    })
-    .catch(error => {
-      console.log(error);
-      res.send(error);
-    });
-});
-
-issuesRouter.put("/:id", (req, res) => {
-  const issuesId = req.params.id;
-  const issuesData = req.body;
-
-  issuesApi
-    .updateIssues(issuesId, issuesData)
-    .then(() => {
-      res.redirect(`/issues/${issuesId}`);
+      res.redirect("/login");
     })
     .catch(error => {
       console.log(error);
@@ -76,11 +61,26 @@ issuesRouter.put("/:id", (req, res) => {
     });
 });
 
-issuesRouter.delete("/:id", (req, res) => {
-  issuesApi
-    .deleteIssues(req.params.id)
+loginRouter.put("/:id", (req, res) => {
+  const loginId = req.params.id;
+  const loginData = req.body;
+
+  loginApi
+    .updatelogin(loginId, loginData)
     .then(() => {
-      res.redirect("/issues");
+      res.redirect(`/login/${loginId}`);
+    })
+    .catch(error => {
+      console.log(error);
+      res.send(error);
+    });
+});
+
+loginRouter.delete("/:id", (req, res) => {
+  loginApi
+    .deletelogin(req.params.id)
+    .then(() => {
+      res.redirect("/login");
     })
     .catch(error => {
       console.log(error);
@@ -89,5 +89,5 @@ issuesRouter.delete("/:id", (req, res) => {
 });
 
 module.exports = {
-  issuesRouter
+  loginRouter
 };

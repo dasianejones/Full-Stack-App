@@ -1,31 +1,31 @@
 const express = require("express");
 
-const issuesApi = require("../models/issues.js");
+const welcomeApi = require("../models/welcome.js");
 
-const issuesRouter = express.Router();
+const welcomeRouter = express.Router();
 
-issuesRouter.get("/", (req, res) => {
-  issuesApi
-    .getAllIssues()
-    .then(allIssues => {
-      res.render("issues/allIssues", { allIssues });
+welcomeRouter.get("/", (req, res) => {
+  welcomeApi
+    .getAllwelcome()
+    .then(allwelcome => {
+      res.render("welcome/allwelcome", { allwelcome });
     })
     .catch(error => {
-      console.log("Error getting all issues");
+      console.log("Error getting all welcome");
       console.log(error);
       res.send(error);
     });
 });
 
-issuesRouter.get("/new", (req, res) => {
-  res.render("issues/createIssues");
+welcomeRouter.get("/new", (req, res) => {
+  res.render("welcome/createwelcome");
 });
 
-issuesRouter.get("/:id/edit", (req, res) => {
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(issues => {
-      res.render("issues/editIssues", { issues });
+welcomeRouter.get("/:id/edit", (req, res) => {
+  welcomeApi
+    .getwelcomeById(req.params.id)
+    .then(welcome => {
+      res.render("welcome/editwelcome", { welcome });
     })
     .catch(error => {
       console.log(error);
@@ -33,42 +33,27 @@ issuesRouter.get("/:id/edit", (req, res) => {
     });
 });
 
-issuesRouter.get("/:id", (req, res) => {
+welcomeRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(singleIssues => {
-      res.render("issues/singleIssues", { singleIssues });
+  welcomeApi
+    .getwelcomeById(req.params.id)
+    .then(singlewelcome => {
+      res.render("welcome/singlewelcome", { singlewelcome });
     })
     .catch(error => {
-      console.log("Error getting single issues");
+      console.log("Error getting single welcome");
       console.log(error);
-      res.send("Failed to retrieve issues");
+      res.send("Failed to retrieve welcome");
     });
 });
 
-issuesRouter.post("/", (req, res) => {
-  const newIssues = req.body;
+welcomeRouter.post("/", (req, res) => {
+  const newwelcome = req.body;
 
-  issuesApi
-    .createIssues(newIssues)
+  welcomeApi
+    .createwelcome(newwelcome)
     .then(() => {
-      res.redirect("/issues");
-    })
-    .catch(error => {
-      console.log(error);
-      res.send(error);
-    });
-});
-
-issuesRouter.put("/:id", (req, res) => {
-  const issuesId = req.params.id;
-  const issuesData = req.body;
-
-  issuesApi
-    .updateIssues(issuesId, issuesData)
-    .then(() => {
-      res.redirect(`/issues/${issuesId}`);
+      res.redirect("/welcome");
     })
     .catch(error => {
       console.log(error);
@@ -76,11 +61,26 @@ issuesRouter.put("/:id", (req, res) => {
     });
 });
 
-issuesRouter.delete("/:id", (req, res) => {
-  issuesApi
-    .deleteIssues(req.params.id)
+welcomeRouter.put("/:id", (req, res) => {
+  const welcomeId = req.params.id;
+  const welcomeData = req.body;
+
+  welcomeApi
+    .updatewelcome(welcomeId, welcomeData)
     .then(() => {
-      res.redirect("/issues");
+      res.redirect(`/welcome/${welcomeId}`);
+    })
+    .catch(error => {
+      console.log(error);
+      res.send(error);
+    });
+});
+
+welcomeRouter.delete("/:id", (req, res) => {
+  welcomeApi
+    .deletewelcome(req.params.id)
+    .then(() => {
+      res.redirect("/welcome");
     })
     .catch(error => {
       console.log(error);
@@ -89,5 +89,5 @@ issuesRouter.delete("/:id", (req, res) => {
 });
 
 module.exports = {
-  issuesRouter
+  welcomeRouter
 };

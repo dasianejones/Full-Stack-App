@@ -1,31 +1,31 @@
 const express = require("express");
 
-const issuesApi = require("../models/issues.js");
+const signUpApi = require("../models/signUp.js");
 
-const issuesRouter = express.Router();
+const signUpRouter = express.Router();
 
-issuesRouter.get("/", (req, res) => {
-  issuesApi
-    .getAllIssues()
-    .then(allIssues => {
-      res.render("issues/allIssues", { allIssues });
+signUpRouter.get("/", (req, res) => {
+  signUpApi
+    .getAllsignUp()
+    .then(allsignUp => {
+      res.render("signUp/allsignUp", { allsignUp });
     })
     .catch(error => {
-      console.log("Error getting all issues");
+      console.log("Error getting all signUp");
       console.log(error);
       res.send(error);
     });
 });
 
-issuesRouter.get("/new", (req, res) => {
-  res.render("issues/createIssues");
+signUpRouter.get("/new", (req, res) => {
+  res.render("signUp/createsignUp");
 });
 
-issuesRouter.get("/:id/edit", (req, res) => {
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(issues => {
-      res.render("issues/editIssues", { issues });
+signUpRouter.get("/:id/edit", (req, res) => {
+  signUpApi
+    .getsignUpById(req.params.id)
+    .then(signUp => {
+      res.render("signUp/editsignUp", { signUp });
     })
     .catch(error => {
       console.log(error);
@@ -33,42 +33,27 @@ issuesRouter.get("/:id/edit", (req, res) => {
     });
 });
 
-issuesRouter.get("/:id", (req, res) => {
+signUpRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(singleIssues => {
-      res.render("issues/singleIssues", { singleIssues });
+  signUpApi
+    .getsignUpById(req.params.id)
+    .then(singlesignUp => {
+      res.render("signUp/singlesignUp", { singlesignUp });
     })
     .catch(error => {
-      console.log("Error getting single issues");
+      console.log("Error getting single signUp");
       console.log(error);
-      res.send("Failed to retrieve issues");
+      res.send("Failed to retrieve signUp");
     });
 });
 
-issuesRouter.post("/", (req, res) => {
-  const newIssues = req.body;
+signUpRouter.post("/", (req, res) => {
+  const newsignUp = req.body;
 
-  issuesApi
-    .createIssues(newIssues)
+  signUpApi
+    .createsignUp(newsignUp)
     .then(() => {
-      res.redirect("/issues");
-    })
-    .catch(error => {
-      console.log(error);
-      res.send(error);
-    });
-});
-
-issuesRouter.put("/:id", (req, res) => {
-  const issuesId = req.params.id;
-  const issuesData = req.body;
-
-  issuesApi
-    .updateIssues(issuesId, issuesData)
-    .then(() => {
-      res.redirect(`/issues/${issuesId}`);
+      res.redirect("/signUp");
     })
     .catch(error => {
       console.log(error);
@@ -76,11 +61,26 @@ issuesRouter.put("/:id", (req, res) => {
     });
 });
 
-issuesRouter.delete("/:id", (req, res) => {
-  issuesApi
-    .deleteIssues(req.params.id)
+signUpRouter.put("/:id", (req, res) => {
+  const signUpId = req.params.id;
+  const signUpData = req.body;
+
+  signUpApi
+    .updatesignUp(signUpId, signUpData)
     .then(() => {
-      res.redirect("/issues");
+      res.redirect(`/signUp/${signUpId}`);
+    })
+    .catch(error => {
+      console.log(error);
+      res.send(error);
+    });
+});
+
+signUpRouter.delete("/:id", (req, res) => {
+  signUpApi
+    .deletesignUp(req.params.id)
+    .then(() => {
+      res.redirect("/signUp");
     })
     .catch(error => {
       console.log(error);
@@ -89,5 +89,5 @@ issuesRouter.delete("/:id", (req, res) => {
 });
 
 module.exports = {
-  issuesRouter
+  signUpRouter
 };

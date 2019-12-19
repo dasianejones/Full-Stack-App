@@ -1,31 +1,31 @@
 const express = require("express");
 
-const issuesApi = require("../models/issues.js");
+const monthlyBudgetApi = require("../models/monthlyBudget.js");
 
-const issuesRouter = express.Router();
+const monthlyBudgetRouter = express.Router();
 
-issuesRouter.get("/", (req, res) => {
-  issuesApi
-    .getAllIssues()
-    .then(allIssues => {
-      res.render("issues/allIssues", { allIssues });
+monthlyBudgetRouter.get("/", (req, res) => {
+  monthlyBudgetApi
+    .getAllmonthlyBudget()
+    .then(allmonthlyBudget => {
+      res.render("monthlyBudget/allmonthlyBudget", { allmonthlyBudget });
     })
     .catch(error => {
-      console.log("Error getting all issues");
+      console.log("Error getting all monthlyBudget");
       console.log(error);
       res.send(error);
     });
 });
 
-issuesRouter.get("/new", (req, res) => {
-  res.render("issues/createIssues");
+monthlyBudgetRouter.get("/new", (req, res) => {
+  res.render("monthlyBudget/createmonthlyBudget");
 });
 
-issuesRouter.get("/:id/edit", (req, res) => {
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(issues => {
-      res.render("issues/editIssues", { issues });
+monthlyBudgetRouter.get("/:id/edit", (req, res) => {
+  monthlyBudgetApi
+    .getmonthlyBudgetById(req.params.id)
+    .then(monthlyBudget => {
+      res.render("monthlyBudget/editmonthlyBudget", { monthlyBudget });
     })
     .catch(error => {
       console.log(error);
@@ -33,42 +33,27 @@ issuesRouter.get("/:id/edit", (req, res) => {
     });
 });
 
-issuesRouter.get("/:id", (req, res) => {
+monthlyBudgetRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(singleIssues => {
-      res.render("issues/singleIssues", { singleIssues });
+  monthlyBudgetApi
+    .getmonthlyBudgetById(req.params.id)
+    .then(singlemonthlyBudget => {
+      res.render("monthlyBudget/singlemonthlyBudget", { singlemonthlyBudget });
     })
     .catch(error => {
-      console.log("Error getting single issues");
+      console.log("Error getting single monthlyBudget");
       console.log(error);
-      res.send("Failed to retrieve issues");
+      res.send("Failed to retrieve monthlyBudget");
     });
 });
 
-issuesRouter.post("/", (req, res) => {
-  const newIssues = req.body;
+monthlyBudgetRouter.post("/", (req, res) => {
+  const newmonthlyBudget = req.body;
 
-  issuesApi
-    .createIssues(newIssues)
+  monthlyBudgetApi
+    .createmonthlyBudget(newmonthlyBudget)
     .then(() => {
-      res.redirect("/issues");
-    })
-    .catch(error => {
-      console.log(error);
-      res.send(error);
-    });
-});
-
-issuesRouter.put("/:id", (req, res) => {
-  const issuesId = req.params.id;
-  const issuesData = req.body;
-
-  issuesApi
-    .updateIssues(issuesId, issuesData)
-    .then(() => {
-      res.redirect(`/issues/${issuesId}`);
+      res.redirect("/monthlyBudget");
     })
     .catch(error => {
       console.log(error);
@@ -76,11 +61,26 @@ issuesRouter.put("/:id", (req, res) => {
     });
 });
 
-issuesRouter.delete("/:id", (req, res) => {
-  issuesApi
-    .deleteIssues(req.params.id)
+monthlyBudgetRouter.put("/:id", (req, res) => {
+  const monthlyBudgetId = req.params.id;
+  const monthlyBudgetData = req.body;
+
+  monthlyBudgetApi
+    .updatemonthlyBudget(monthlyBudgetId, monthlyBudgetData)
     .then(() => {
-      res.redirect("/issues");
+      res.redirect(`/monthlyBudget/${monthlyBudgetId}`);
+    })
+    .catch(error => {
+      console.log(error);
+      res.send(error);
+    });
+});
+
+monthlyBudgetRouter.delete("/:id", (req, res) => {
+  monthlyBudgetApi
+    .deletemonthlyBudget(req.params.id)
+    .then(() => {
+      res.redirect("/monthlyBudget");
     })
     .catch(error => {
       console.log(error);
@@ -89,5 +89,5 @@ issuesRouter.delete("/:id", (req, res) => {
 });
 
 module.exports = {
-  issuesRouter
+  monthlyBudgetRouter
 };

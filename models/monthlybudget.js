@@ -3,34 +3,34 @@ const mongoose = require("./connection");
 const Schema = mongoose.Schema;
 
 const MonthlyBudgetSchema = new Schema({
-  signupfree: String,
-  learnmore: String,
-  signin: String
+  monthlyincome: Number,
+  monthlyexpenses: Number,
+  monthlybudget: Number
 });
 
-const MonthlyBudgetCollection = mongoose.model(
+const monthlyBudgetCollection = mongoose.model(
   "MonthlyBudget",
   MonthlyBudgetSchema
 );
 
 const getAllMonthlyBudget = () => {
-  return MonthlyBudgetCollection.find({});
+  return monthlyBudgetCollection.find({});
 };
 
 const getMonthlyBudgetById = id => {
-  return MonthlyBudgetCollection.findById(id);
+  return monthlyBudgetCollection.findById(id);
 };
 
 const createMonthlyBudget = MonthlyBudgetObject => {
-  return MonthlyBudgetCollection.create(MonthlyBudgetObject);
+  return monthlyBudgetCollection.create(MonthlyBudgetObject);
 };
 
 const deleteMonthlyBudget = id => {
-  return MonthlyBudgetCollection.deleteOne({ _id: id });
+  return monthlyBudgetCollection.deleteOne({ _id: id });
 };
 
 const updateMonthlyBudget = (id, updatedMonthlyBudget) => {
-  return MonthlyBudgetCollection.updateOne({ _id: id }, updatedMonthlyBudget);
+  return monthlyBudgetCollection.updateOne({ _id: id }, updatedMonthlyBudget);
 };
 
 module.exports = {

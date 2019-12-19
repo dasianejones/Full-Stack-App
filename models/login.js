@@ -3,31 +3,30 @@ const mongoose = require("./connection");
 const Schema = mongoose.Schema;
 
 const LoginSchema = new Schema({
-  signupfree: String,
-  learnmore: String,
-  signin: String
+  email: String,
+  password: String
 });
 
-const LoginCollection = mongoose.model("Login", LoginSchema);
+const loginCollection = mongoose.model("Login", LoginSchema);
 
 const getAllLogin = () => {
-  return LoginCollection.find({});
+  return loginCollection.find({});
 };
 
 const getLoginById = id => {
-  return LoginCollection.findById(id);
+  return loginCollection.findById(id);
 };
 
 const createLogin = LoginObject => {
-  return LoginCollection.create(LoginObject);
+  return loginCollection.create(LoginObject);
 };
 
 const deleteLogin = id => {
-  return LoginCollection.deleteOne({ _id: id });
+  return loginCollection.deleteOne({ _id: id });
 };
 
 const updateLogin = (id, updatedLogin) => {
-  return LoginCollection.updateOne({ _id: id }, updatedLogin);
+  return loginCollection.updateOne({ _id: id }, updatedLogin);
 };
 
 module.exports = {

@@ -2,38 +2,38 @@ const mongoose = require("./connection");
 
 const Schema = mongoose.Schema;
 
-const SignupSchema = new Schema({
-  signupfree: String,
-  learnmore: String,
-  signin: String
+const SignUpSchema = new Schema({
+  email: String,
+  phonenumber: Number,
+  password: String
 });
 
-const SignupCollection = mongoose.model("Signup", SignupSchema);
+const signUpCollection = mongoose.model("signUp", SignUpSchema);
 
-const getAllSignup = () => {
-  return SignupCollection.find({});
+const getAllsignUp = () => {
+  return signUpCollection.find({});
 };
 
-const getSignupById = id => {
-  return SignupCollection.findById(id);
+const getsignUpById = id => {
+  return signUpCollection.findById(id);
 };
 
-const createSignup = SignupObject => {
-  return SignupCollection.create(SignupObject);
+const createsignUp = signUpObject => {
+  return signUpCollection.create(signUpObject);
 };
 
-const deleteSignup = id => {
-  return SignupCollection.deleteOne({ _id: id });
+const deletesignUp = id => {
+  return signUpCollection.deleteOne({ _id: id });
 };
 
-const updateSignup = (id, updatedSignup) => {
-  return SignupCollection.updateOne({ _id: id }, updatedSignup);
+const updatesignUp = (id, updatedsignUp) => {
+  return signUpCollection.updateOne({ _id: id }, updatedsignUp);
 };
 
 module.exports = {
-  getAllSignup,
-  getSignupById,
-  createSignup,
-  deleteSignup,
-  updateSignup
+  getAllsignUp,
+  getsignUpById,
+  createsignUp,
+  deletesignUp,
+  updatesignUp
 };

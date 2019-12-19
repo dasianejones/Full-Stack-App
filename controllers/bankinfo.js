@@ -1,31 +1,31 @@
 const express = require("express");
 
-const issuesApi = require("../models/issues.js");
+const bankInfoApi = require("../models/bankInfo.js");
 
-const issuesRouter = express.Router();
+const bankInfoRouter = express.Router();
 
-issuesRouter.get("/", (req, res) => {
-  issuesApi
-    .getAllIssues()
-    .then(allIssues => {
-      res.render("issues/allIssues", { allIssues });
+bankInfoRouter.get("/", (req, res) => {
+  bankInfoApi
+    .getAllbankInfo()
+    .then(allbankInfo => {
+      res.render("bankInfo/allbankInfo", { allbankInfo });
     })
     .catch(error => {
-      console.log("Error getting all issues");
+      console.log("Error getting all bankInfo");
       console.log(error);
       res.send(error);
     });
 });
 
-issuesRouter.get("/new", (req, res) => {
-  res.render("issues/createIssues");
+bankInfoRouter.get("/new", (req, res) => {
+  res.render("bankInfo/createbankInfo");
 });
 
-issuesRouter.get("/:id/edit", (req, res) => {
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(issues => {
-      res.render("issues/editIssues", { issues });
+bankInfoRouter.get("/:id/edit", (req, res) => {
+  bankInfoApi
+    .getbankInfoById(req.params.id)
+    .then(bankInfo => {
+      res.render("bankInfo/editbankInfo", { bankInfo });
     })
     .catch(error => {
       console.log(error);
@@ -33,42 +33,27 @@ issuesRouter.get("/:id/edit", (req, res) => {
     });
 });
 
-issuesRouter.get("/:id", (req, res) => {
+bankInfoRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
-  issuesApi
-    .getIssuesById(req.params.id)
-    .then(singleIssues => {
-      res.render("issues/singleIssues", { singleIssues });
+  bankInfoApi
+    .getbankInfoById(req.params.id)
+    .then(singlebankInfo => {
+      res.render("bankInfo/singlebankInfo", { singlebankInfo });
     })
     .catch(error => {
-      console.log("Error getting single issues");
+      console.log("Error getting single bankInfo");
       console.log(error);
-      res.send("Failed to retrieve issues");
+      res.send("Failed to retrieve bankInfo");
     });
 });
 
-issuesRouter.post("/", (req, res) => {
-  const newIssues = req.body;
+bankInfoRouter.post("/", (req, res) => {
+  const newbankInfo = req.body;
 
-  issuesApi
-    .createIssues(newIssues)
+  bankInfoApi
+    .createbankInfo(newbankInfo)
     .then(() => {
-      res.redirect("/issues");
-    })
-    .catch(error => {
-      console.log(error);
-      res.send(error);
-    });
-});
-
-issuesRouter.put("/:id", (req, res) => {
-  const issuesId = req.params.id;
-  const issuesData = req.body;
-
-  issuesApi
-    .updateIssues(issuesId, issuesData)
-    .then(() => {
-      res.redirect(`/issues/${issuesId}`);
+      res.redirect("/bankInfo");
     })
     .catch(error => {
       console.log(error);
@@ -76,11 +61,26 @@ issuesRouter.put("/:id", (req, res) => {
     });
 });
 
-issuesRouter.delete("/:id", (req, res) => {
-  issuesApi
-    .deleteIssues(req.params.id)
+bankInfoRouter.put("/:id", (req, res) => {
+  const bankInfoId = req.params.id;
+  const bankInfoData = req.body;
+
+  bankInfoApi
+    .updatebankInfo(bankInfoId, bankInfoData)
     .then(() => {
-      res.redirect("/issues");
+      res.redirect(`/bankInfo/${bankInfoId}`);
+    })
+    .catch(error => {
+      console.log(error);
+      res.send(error);
+    });
+});
+
+bankInfoRouter.delete("/:id", (req, res) => {
+  bankInfoApi
+    .deletebankInfo(req.params.id)
+    .then(() => {
+      res.redirect("/bankInfo");
     })
     .catch(error => {
       console.log(error);
@@ -89,5 +89,5 @@ issuesRouter.delete("/:id", (req, res) => {
 });
 
 module.exports = {
-  issuesRouter
+  bankInfoRouter
 };

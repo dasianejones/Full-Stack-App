@@ -3,31 +3,31 @@ const mongoose = require("./connection");
 const Schema = mongoose.Schema;
 
 const BankInfoSchema = new Schema({
-  signupfree: String,
-  learnmore: String,
-  signin: String
+  bankname: String,
+  bankaccount: Number,
+  bankrouting: Number
 });
 
-const BankInfoCollection = mongoose.model("BankInfo", BankInfoSchema);
+const bankInfoCollection = mongoose.model("BankInfo", BankInfoSchema);
 
 const getAllBankInfo = () => {
-  return BankInfoCollection.find({});
+  return bankInfoCollection.find({});
 };
 
 const getBankInfoById = id => {
-  return BankInfoCollection.findById(id);
+  return bankInfoCollection.findById(id);
 };
 
 const createBankInfo = BankInfoObject => {
-  return BankInfoCollection.create(BankInfoObject);
+  return bankInfoCollection.create(BankInfoObject);
 };
 
 const deleteBankInfo = id => {
-  return BankInfoCollection.deleteOne({ _id: id });
+  return bankInfoCollection.deleteOne({ _id: id });
 };
 
 const updateBankInfo = (id, updatedBankInfo) => {
-  return BankInfoCollection.updateOne({ _id: id }, updatedBankInfo);
+  return bankInfoCollection.updateOne({ _id: id }, updatedBankInfo);
 };
 
 module.exports = {
