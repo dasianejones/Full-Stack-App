@@ -1,14 +1,15 @@
 const express = require("express");
 
-const monthlyBudgetApi = require("../models/monthlyBudget.js");
+const monthlyBudgetApi = require("../models/monthlybudget.js");
 
 const monthlyBudgetRouter = express.Router();
 
 monthlyBudgetRouter.get("/", (req, res) => {
   monthlyBudgetApi
     .getAllMonthlyBudget()
-    .then(allmonthlyBudget => {
-      res.render("monthlyBudget/allmonthlyBudget", { allmonthlyBudget });
+    .then(allMonthlyBudget => {
+      console.log(allMonthlyBudget);
+      res.render("monthlyBudget/allmonthlyBudget", { allMonthlyBudget });
     })
     .catch(error => {
       console.log("Error getting all monthlyBudget");
@@ -37,8 +38,8 @@ monthlyBudgetRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
   monthlyBudgetApi
     .getMonthlyBudgetById(req.params.id)
-    .then(singlemonthlyBudget => {
-      res.render("monthlyBudget/singlemonthlyBudget", { singlemonthlyBudget });
+    .then(singleMonthlyBudget => {
+      res.render("monthlyBudget/singlemonthlyBudget", { singleMonthlyBudget });
     })
     .catch(error => {
       console.log("Error getting single monthlyBudget");

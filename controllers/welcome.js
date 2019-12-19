@@ -7,8 +7,8 @@ const welcomeRouter = express.Router();
 welcomeRouter.get("/", (req, res) => {
   welcomeApi
     .getAllWelcome()
-    .then(allwelcome => {
-      res.render("welcome/allwelcome", { allwelcome });
+    .then(allWelcome => {
+      res.render("welcome/allWelcome", { allWelcome });
     })
     .catch(error => {
       console.log("Error getting all welcome");
@@ -18,14 +18,14 @@ welcomeRouter.get("/", (req, res) => {
 });
 
 welcomeRouter.get("/new", (req, res) => {
-  res.render("welcome/createwelcome");
+  res.render("welcome/createWelcome");
 });
 
 welcomeRouter.get("/:id/edit", (req, res) => {
   welcomeApi
     .getWelcomeById(req.params.id)
     .then(welcome => {
-      res.render("welcome/editwelcome", { welcome });
+      res.render("welcome/editWelcome", { welcome });
     })
     .catch(error => {
       console.log(error);
@@ -37,8 +37,8 @@ welcomeRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
   welcomeApi
     .getWelcomeById(req.params.id)
-    .then(singlewelcome => {
-      res.render("welcome/singlewelcome", { singlewelcome });
+    .then(singleWelcome => {
+      res.render("welcome/singleWelcome", { singleWelcome });
     })
     .catch(error => {
       console.log("Error getting single welcome");
@@ -48,10 +48,10 @@ welcomeRouter.get("/:id", (req, res) => {
 });
 
 welcomeRouter.post("/", (req, res) => {
-  const newwelcome = req.body;
+  const newWelcome = req.body;
 
   welcomeApi
-    .createWelcome(newwelcome)
+    .createWelcome(newWelcome)
     .then(() => {
       res.redirect("/welcome");
     })

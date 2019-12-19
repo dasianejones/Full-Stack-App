@@ -17,8 +17,8 @@ const getLoginById = id => {
   return loginCollection.findById(id);
 };
 
-const createLogin = LoginObject => {
-  return loginCollection.create(LoginObject);
+const createLogin = loginObject => {
+  return loginCollection.create(loginObject);
 };
 
 const deleteLogin = id => {

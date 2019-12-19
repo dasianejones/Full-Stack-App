@@ -1,6 +1,6 @@
 const express = require("express");
 
-const signUpApi = require("../models/signUp.js");
+const signUpApi = require("../models/signup.js");
 
 const signUpRouter = express.Router();
 

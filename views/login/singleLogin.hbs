@@ -4,10 +4,10 @@
 <h2>Password:</h2>
 <div>{{singleLogin.password}}</div>
 
-<form method="POST" action="/Login/{{singleLogin._id}}?_method=DELETE">
+<form method="POST" action="/login/{{singleLogin._id}}?_method=DELETE">
     <input type="submit" value="Delete Login">
 </form>
 
-<a href="/Login/{{singleLogin._id}}/edit">
+<a href="/login/{{singleLogin._id}}/edit">
     <button>Edit Login</button>
 </a>

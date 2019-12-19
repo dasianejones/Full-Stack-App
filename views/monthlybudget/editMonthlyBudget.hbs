@@ -1,12 +1,12 @@
 <h1>Edit MonthlyBudget</h1>
 
-<form method="POST" action="/MonthlyBudget/{{MonthlyBudget._id}}?_method=PUT">
+<form method="POST" action="/MonthlyBudget/{{monthlyBudget._id}}?_method=PUT">
 
-  <input type="text" placeholder="monthlyincome" name="monthlyincome" value="{{MonthlyBudget.monthlyincome}}" />
+  <input type="text" placeholder="monthlyincome" name="monthlyincome" value="{{monthlyBudget.monthlyincome}}" />
 
-  <input type="date" placeholder="monthlyexpenses" name="monthlyexpenses" value="{{MonthlyBudget.monthlyexpenses}}" />
+  <input type="text" placeholder="monthlyexpenses" name="monthlyexpenses" value="{{monthlyBudget.monthlyexpenses}}" />
 
-  <input type="text" placeholder="monthlybudget" name="monthlybudget" value="{{MonthlyBudget.monthlybudget}}" />
+  <input type="text" placeholder="monthlybudget" name="monthlybudget" value="{{monthlyBudget.monthlybudget}}" />
 
   <input type="submit" value="Save" />
 </form>

@@ -7,8 +7,9 @@ const loginRouter = express.Router();
 loginRouter.get("/", (req, res) => {
   loginApi
     .getAllLogin()
-    .then(alllogin => {
-      res.render("login/alllogin", { alllogin });
+    .then(allLogin => {
+      console.log(allLogin);
+      res.render("login/allLogin", { allLogin });
     })
     .catch(error => {
       console.log("Error getting all login");
@@ -18,14 +19,14 @@ loginRouter.get("/", (req, res) => {
 });
 
 loginRouter.get("/new", (req, res) => {
-  res.render("login/createlogin");
+  res.render("login/createLogin");
 });
 
 loginRouter.get("/:id/edit", (req, res) => {
   loginApi
     .getLoginById(req.params.id)
     .then(login => {
-      res.render("login/editlogin", { login });
+      res.render("login/editLogin", { login });
     })
     .catch(error => {
       console.log(error);
@@ -37,8 +38,8 @@ loginRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
   loginApi
     .getLoginById(req.params.id)
-    .then(singlelogin => {
-      res.render("login/singlelogin", { singlelogin });
+    .then(singleLogin => {
+      res.render("login/singleLogin", { singleLogin });
     })
     .catch(error => {
       console.log("Error getting single login");
@@ -48,11 +49,12 @@ loginRouter.get("/:id", (req, res) => {
 });
 
 loginRouter.post("/", (req, res) => {
-  const newlogin = req.body;
+  const newLogin = req.body;
 
   loginApi
-    .createLogin(newlogin)
+    .createLogin(newLogin)
     .then(() => {
+      console.log(newLogin);
       res.redirect("/login");
     })
     .catch(error => {
@@ -68,6 +70,7 @@ loginRouter.put("/:id", (req, res) => {
   loginApi
     .updateLogin(loginId, loginData)
     .then(() => {
+      console.log(loginId);
       res.redirect(`/login/${loginId}`);
     })
     .catch(error => {
@@ -80,6 +83,7 @@ loginRouter.delete("/:id", (req, res) => {
   loginApi
     .deleteLogin(req.params.id)
     .then(() => {
+      console.log();
       res.redirect("/login");
     })
     .catch(error => {

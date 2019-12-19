@@ -10,30 +10,30 @@ const SignUpSchema = new Schema({
 
 const signUpCollection = mongoose.model("signUp", SignUpSchema);
 
-const getAllsignUp = () => {
+const getAllSignUp = () => {
   return signUpCollection.find({});
 };
 
-const getsignUpById = id => {
+const getSignUpById = id => {
   return signUpCollection.findById(id);
 };
 
-const createsignUp = signUpObject => {
+const createSignUp = signUpObject => {
   return signUpCollection.create(signUpObject);
 };
 
-const deletesignUp = id => {
+const deleteSignUp = id => {
   return signUpCollection.deleteOne({ _id: id });
 };
 
-const updatesignUp = (id, updatedsignUp) => {
+const updateSignUp = (id, updatedsignUp) => {
   return signUpCollection.updateOne({ _id: id }, updatedsignUp);
 };
 
 module.exports = {
-  getAllsignUp,
-  getsignUpById,
-  createsignUp,
-  deletesignUp,
-  updatesignUp
+  getAllSignUp,
+  getSignUpById,
+  createSignUp,
+  deleteSignUp,
+  updateSignUp
 };
