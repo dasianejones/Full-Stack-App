@@ -2,39 +2,39 @@ const mongoose = require("./connection");
 
 const Schema = mongoose.Schema;
 
-const IssuesSchema = new Schema({
+const WorksSchema = new Schema({
   description: String,
   createdAt: Date,
   status: String,
   priority: String
 });
 
-const issuesCollection = mongoose.model("Issues", IssuesSchema);
+const WorksCollection = mongoose.model("Works", WorksSchema);
 
-const getAllIssues = () => {
-  return issuesCollection.find({});
+const getAllWorks = () => {
+  return WorksCollection.find({});
 };
 
-const getIssuesById = id => {
-  return issuesCollection.findById(id);
+const getWorksById = id => {
+  return WorksCollection.findById(id);
 };
 
-const createIssues = issuesObject => {
-  return issuesCollection.create(issuesObject);
+const createWorks = WorksObject => {
+  return WorksCollection.create(WorksObject);
 };
 
-const deleteIssues = id => {
-  return issuesCollection.deleteOne({ _id: id });
+const deleteWorks = id => {
+  return WorksCollection.deleteOne({ _id: id });
 };
 
-const updateIssues = (id, updatedIssues) => {
-  return issuesCollection.updateOne({ _id: id }, updatedIssues);
+const updateWorks = (id, updatedWorks) => {
+  return WorksCollection.updateOne({ _id: id }, updatedWorks);
 };
 
 module.exports = {
-  getAllIssues,
-  getIssuesById,
-  createIssues,
-  deleteIssues,
-  updateIssues
+  getAllWorks,
+  getWorksById,
+  createWorks,
+  deleteWorks,
+  updateWorks
 };

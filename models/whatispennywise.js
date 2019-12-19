@@ -2,39 +2,39 @@ const mongoose = require("./connection");
 
 const Schema = mongoose.Schema;
 
-const IssuesSchema = new Schema({
+const WhatSchema = new Schema({
   description: String,
   createdAt: Date,
   status: String,
   priority: String
 });
 
-const issuesCollection = mongoose.model("Issues", IssuesSchema);
+const WhatCollection = mongoose.model("What", WhatSchema);
 
-const getAllIssues = () => {
-  return issuesCollection.find({});
+const getAllWhat = () => {
+  return WhatCollection.find({});
 };
 
-const getIssuesById = id => {
-  return issuesCollection.findById(id);
+const getWhatById = id => {
+  return WhatCollection.findById(id);
 };
 
-const createIssues = issuesObject => {
-  return issuesCollection.create(issuesObject);
+const createWhat = WhatObject => {
+  return WhatCollection.create(WhatObject);
 };
 
-const deleteIssues = id => {
-  return issuesCollection.deleteOne({ _id: id });
+const deleteWhat = id => {
+  return WhatCollection.deleteOne({ _id: id });
 };
 
-const updateIssues = (id, updatedIssues) => {
-  return issuesCollection.updateOne({ _id: id }, updatedIssues);
+const updateWhat = (id, updatedWhat) => {
+  return WhatCollection.updateOne({ _id: id }, updatedWhat);
 };
 
 module.exports = {
-  getAllIssues,
-  getIssuesById,
-  createIssues,
-  deleteIssues,
-  updateIssues
+  getAllWhat,
+  getWhatById,
+  createWhat,
+  deleteWhat,
+  updateWhat
 };
