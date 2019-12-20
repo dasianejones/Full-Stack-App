@@ -54,7 +54,7 @@ monthlyBudgetRouter.post("/", (req, res) => {
   monthlyBudgetApi
     .createMonthlyBudget(newmonthlyBudget)
     .then(() => {
-      res.redirect("/getThank");
+      res.redirect("/thankyou");
     })
     .catch(error => {
       console.log(error);

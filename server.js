@@ -72,8 +72,8 @@ app.get("/", (req, res) => {
 app.get("/getWho", (req, res) => {
   res.render("who/allWho");
 });
-app.get("/getThank", (req, res) => {
-  res.render("thank/allThank");
+app.get("/thankyou", (req, res) => {
+  res.render("thankyou/allThankYou");
 });
 
 app.use("/bankinfo", bankInfoRouter);
@@ -81,7 +81,6 @@ app.use("/login", loginRouter);
 app.use("/monthlybudget", monthlyBudgetRouter);
 app.use("/signup", signUpRouter);
 app.use("/welcome", welcomeRouter);
-app.use("/getThank", thankYouRouter);
 
 /* Step 5
  *
