@@ -1,12 +1,12 @@
-<h1>Edit Bank Info</h1>
+<h1>Update Bank Account</h1>
 
 <form method="POST" action="/bankInfo/{{bankInfo._id}}?_method=PUT">
 
   <input type="text" placeholder="bankname" name="bankname" value="{{bankInfo.bankname}}" />
 
-  <input type="number" placeholder="bankaccount" name="bankaccount" value="{{bankInfo.bankaccount}}" />
+  <input type="text" placeholder="bankaccount" name="bankaccount" value="{{bankInfo.bankaccount}}" />
 
-  <input type="number" placeholder="bankrouting" name="bankrouting" value="{{bankInfo.bankrouting}}" />
+  <input type="text" placeholder="bankrouting" name="bankrouting" value="{{bankInfo.bankrouting}}" />
 
   <input type="submit" value="Save" />
 </form>

@@ -1,0 +1,20 @@
+.nav-bar {
+  height: 50px;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 20px;
+}
+
+.newacctbtn {
+  text-align: center;
+  align-content: center;
+  padding: 100px;
+}
+
+.links {
+  text-align: right;
+}

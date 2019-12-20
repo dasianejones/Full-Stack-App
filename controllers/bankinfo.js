@@ -23,7 +23,7 @@ bankInfoRouter.get("/new", (req, res) => {
 
 bankInfoRouter.get("/:id/edit", (req, res) => {
   bankInfoApi
-    .getbankInfoById(req.params.id)
+    .getBankInfoById(req.params.id)
     .then(bankInfo => {
       res.render("bankInfo/editbankInfo", { bankInfo });
     })
@@ -36,7 +36,7 @@ bankInfoRouter.get("/:id/edit", (req, res) => {
 bankInfoRouter.get("/:id", (req, res) => {
   console.log(req.params.id);
   bankInfoApi
-    .getbankInfoById(req.params.id)
+    .getBankInfoById(req.params.id)
     .then(singlebankInfo => {
       res.render("bankInfo/singlebankInfo", { singlebankInfo });
     })
