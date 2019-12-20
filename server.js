@@ -81,6 +81,7 @@ app.use("/login", loginRouter);
 app.use("/monthlybudget", monthlyBudgetRouter);
 app.use("/signup", signUpRouter);
 app.use("/welcome", welcomeRouter);
+app.use("/getThank", thankYouRouter);
 
 /* Step 5
  *
