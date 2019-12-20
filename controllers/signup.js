@@ -53,7 +53,7 @@ signUpRouter.post("/", (req, res) => {
   signUpApi
     .createSignUp(newsignUp)
     .then(() => {
-      res.redirect("/signUp");
+      res.redirect("/bankinfo");
     })
     .catch(error => {
       console.log(error);

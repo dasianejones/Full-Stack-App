@@ -53,7 +53,7 @@ bankInfoRouter.post("/", (req, res) => {
   bankInfoApi
     .createBankInfo(newbankInfo)
     .then(() => {
-      res.redirect("/bankInfo");
+      res.redirect("/monthlybudget");
     })
     .catch(error => {
       console.log(error);

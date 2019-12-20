@@ -66,7 +66,11 @@ app.set("view engine", "hbs");
  */
 
 app.get("/", (req, res) => {
-  res.redirect("/bankinfo");
+  res.render("home/allHome");
+});
+
+app.get("/getWho", (req, res) => {
+  res.render("who/allWho");
 });
 
 app.use("/bankinfo", bankInfoRouter);
