@@ -72,6 +72,9 @@ app.get("/", (req, res) => {
 app.get("/getWho", (req, res) => {
   res.render("who/allWho");
 });
+app.get("/getThank", (req, res) => {
+  res.render("thank/allThank");
+});
 
 app.use("/bankinfo", bankInfoRouter);
 app.use("/login", loginRouter);
