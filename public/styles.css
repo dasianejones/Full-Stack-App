@@ -69,34 +69,6 @@ h1 {
   font-size: 17px;
 }
 
-.bottom-navbar-social-media {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-}
-
-.bottom-navbar-social-media:hover {
-  opacity: 0.7;
-}
-
-.bottom-navbar-social-media-facebook {
-  background: #3b5998;
-  color: white;
-}
-
-.bottom-navbar-social-media-twitter {
-  background: #55acee;
-  color: white;
-}
-
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-
 .new-acct-btn {
   display: flex;
   justify-content: center;
