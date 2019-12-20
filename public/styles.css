@@ -1,3 +1,19 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  padding-bottom: 10px;
+  text-align: center;
+  padding-top: 35px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .nav-bar {
   height: 50px;
   width: 100%;
@@ -7,14 +23,153 @@
   align-items: center;
   padding: 0 12px;
   font-size: 20px;
+  background-color: #ddd;
+  border: 1px black;
 }
 
-.newacctbtn {
-  text-align: center;
-  align-content: center;
-  padding: 100px;
+.nav-bar .logo {
+  padding-bottom: 30px;
 }
 
-.links {
+.nav-bar .links {
   text-align: right;
+  font-size: 16px;
+  padding-bottom: 30px;
+}
+
+.bottom-navbar {
+  background-color: #ddd;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.bottom-navbar a:hover {
+  background-color: rgb(190, 183, 183);
+  color: black;
+}
+
+.bottom-navbar .icon {
+  display: none;
+}
+
+.bottom-navbar a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.bottom-navbar a {
+  display: flex;
+  justify-content: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.bottom-navbar-social-media {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.bottom-navbar-social-media:hover {
+  opacity: 0.7;
+}
+
+.bottom-navbar-social-media-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.bottom-navbar-social-media-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.new-acct-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 18px;
+}
+
+.signup_btn {
+  width: 180px;
+  height: 42px;
+  border: 1px solid black;
+}
+
+.signup_btn:hover {
+  background-color: #f7f7f7;
+}
+
+.signup-title {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 90px;
+}
+
+.signup-title-description {
+  text-align: center;
+  font-size: 27px;
+  padding-top: 40px;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.signup-containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.signup-variables {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 8px 30px;
+}
+
+.form-label {
+  padding-top: 50px;
+  font-size: 20px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+}
+
+.form-input-box {
+  width: 100%;
+  height: 25px;
+  padding-top: 10px;
+}
+
+.form-input-box:hover {
+  background-color: #f7f7f7;
 }

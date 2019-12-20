@@ -8,9 +8,11 @@
 <div>{{singlesignUp.password}}</div>
 
 <form method="POST" action="/signUp/{{singlesignUp._id}}?_method=DELETE">
-    <input type="submit" value="Delete New Account">
+    <input class="signup_btn" type="submit" value="Delete New Account">
 </form>
 
 <a href="/signUp/{{singlesignUp._id}}/edit">
-    <button>Edit Login Information </button>
+    <div class="btn-container">
+        <button class="signup_btn"> Edit Login Information </button>
+    </div>
 </a>
