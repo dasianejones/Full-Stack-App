@@ -74,11 +74,7 @@ app.get("/getWho", (req, res) => {
 });
 
 app.get("/thank", (req, res) => {
-  res.render("thankyou/thankYou");
-});
-
-app.get("/acct", (req, res) => {
-  res.render("/acctinfo");
+  res.render("thankyou/thankyou");
 });
 
 app.use("/bankinfo", bankInfoRouter);
