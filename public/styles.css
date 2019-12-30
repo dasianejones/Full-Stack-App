@@ -154,6 +154,22 @@ a:active {
   background-color: #f7f7f7;
 }
 
+.login-containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-variables {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 8px 30px;
+}
+
 .socialmedia-icons {
   display: flex;
   height: 100%;

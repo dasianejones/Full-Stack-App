@@ -1,21 +1,24 @@
-<h1> Monthly Expense Calculator</h1>
+<div class="signup-title">Let's Add Your Monthly Expenses!</div>
 
-<a href="/MonthlyBudget/new">
-    <div class="newbtn">
-        <div style="text-align:center;">
-            <button type="button" class="MonthlyBudget_btn">Add New Monthly Expense </button>
-        </div>
+<div class="btn-container" style="padding-top: 50px;">
+    <div class="new-acct-btn">
+        <a href="/MonthlyBudget/new">
+            <button type="button" class="signup_btn">Add New Monthly Expense</button>
+        </a>
+
     </div>
-</a>
-</a>
+</div>
+
+
 
 <ul>
     {{#each allMonthlyBudget}}
 
     <li>
         <a href="/MonthlyBudget/{{_id}}">
-            {{monthlyincome}}
+            {{_id}}
         </a>
+        <h3>{{monthlyincome}}</h3>
         <h3>{{monthlyexpenses}}</h3>
         <h3>{{monthlybudget}}</h3>
 

@@ -77,6 +77,10 @@ app.get("/thank", (req, res) => {
   res.render("thankyou/thankYou");
 });
 
+app.get("/acct", (req, res) => {
+  res.render("/acctinfo");
+});
+
 app.use("/bankinfo", bankInfoRouter);
 app.use("/login", loginRouter);
 app.use("/monthlybudget", monthlyBudgetRouter);

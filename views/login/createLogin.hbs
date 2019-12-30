@@ -2,18 +2,20 @@
 
 <form method="POST" action="/login">
 
+  <div class="login-containers"></div>
+  <div class="login-variables">
 
-  <div class="LoginVariables">
+    <label class="form-label" for="Email">Email</label>
+    <input type="text" value="" class="form-input-box" placeholder="email" name="email" id="email" />
 
-    <label for="Email">Email</label>
-    <input type="text" value="" placeholder="email" name="email" id="email" />
+    <label class="form-label" for="Password">Password</label>
+    <input type="password" value="" class="form-input-box" placeholder="password" name="password" id="password" />
 
-    <label for="Password">Password</label>
-    <input type="text" value="" placeholder="password" name="password" id="password" />
 
-    <input type="submit" value="Create Login" id="submit_btn" />
+    <div class="btn-container">
+      <input class="signup_btn" type="submit" value="Login" id="submit_btn" />
+
+    </div>
 
   </div>
-
-
-</form>
+  </div>
