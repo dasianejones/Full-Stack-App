@@ -8,6 +8,7 @@
  * Import needed packages
  *
  */
+
 const express = require("express");
 const app = express();
 const methodOverride = require("method-override");
@@ -75,6 +76,10 @@ app.get("/getWho", (req, res) => {
 
 app.get("/thank", (req, res) => {
   res.render("thankyou/thankyou");
+});
+
+app.get("/acct", (req, res) => {
+  res.render("acctinfo/acctinfo");
 });
 
 app.use("/bankinfo", bankInfoRouter);

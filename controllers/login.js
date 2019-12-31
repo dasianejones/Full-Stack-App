@@ -19,7 +19,7 @@ loginRouter.get("/", (req, res) => {
 });
 
 loginRouter.get("/new", (req, res) => {
-  res.render("login/acctinfo");
+  res.render("acctinfo/acctinfo");
 });
 
 loginRouter.get("/:id/edit", (req, res) => {

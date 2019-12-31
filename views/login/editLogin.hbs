@@ -2,10 +2,19 @@
 
 <form method="POST" action="/login/{{login._id}}?_method=PUT">
 
-  <input type="text" placeholder="email" name="email" value="{{login.email}}" />
+  <div class="login-containers">
+    <div class="login-variables">
 
-  <input type="password" placeholder="password" name="password" value="{{login.password}}" />
+      <label class="form-label" for="Email">Email</label>
+      <input type="text" class="form-input-box" placeholder="email" name="email" value="{{login.email}}" />
+
+      <label class="form-label" for="Password">Password</label>
+      <input type="password" class="form-input-box" placeholder="password" name="password" value="{{login.password}}" />
 
 
-  <input type="submit" value="Save" />
+      <input type="submit" value="Save" />
+
+
+    </div>
+  </div>
 </form>

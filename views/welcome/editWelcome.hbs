@@ -1,12 +1,24 @@
-<h1>Edit Welcome</h1>
+<h1>Update Account Information</h1>
 
 <form method="POST" action="/Welcome/{{welcome._id}}?_method=PUT">
 
-  <input type="text" placeholder="country" name="country" value="{{welcome.country}}" />
+  <div class="signup-containers">
+    <div class="signup-variables">
 
-  <input type="text" placeholder="state" name="state" value="{{welcome.state}}" />
+      <label class="form-label" for="country">Country</label>
+      <input type="text" placeholder="country" name="country" value="{{welcome.country}}" />
 
-  <input type="number" placeholder="zipcode" name="zipcode" value="{{welcome.zipcode}}" />
+      <label class="form-label" for="state">State</label>
+      <input type="number" placeholder="state" name="state" value="{{welcome.state}}" />
 
-  <input type="submit" value="Save" />
+      <label class="form-label" for="zipcode">Zip Code</label>
+      <input type="password" placeholder="zipcode" name="zipcode" value="{{welcome.zipcode}}" />
+
+      <div class="btn-container">
+        <input class="signup_btn" type="submit" value="Save" />
+      </div>
+
+    </div>
+  </div>
+
 </form>

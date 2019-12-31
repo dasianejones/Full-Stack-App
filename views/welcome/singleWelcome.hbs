@@ -1,16 +1,21 @@
-<h2>Country:</h2>
-<div>{{singleWelcome.country}}</div>
+<div class="signup-containers">
 
-<h2>State:</h2>
-<div>{{singleWelcome.state}}</div>
+    <label class="form-label" for="country"></label>
+    <input type="hidden" name="country" value="{{singleWelcome.country}}" />
 
-<h2>Zip Code:</h2>
-<div>{{singleWelcome.zipcode}}</div>
+    <label class="form-label" for="state"></label>
+    <input type="hidden" name="state" value="{{singleWelcome.state}}" />
 
-<form method="POST" action="/Welcome/{{singleWelcome._id}}?_method=DELETE">
-    <input type="submit" value="Delete Account Information">
-</form>
+    <label class="form-label" for="zipcode"></label>
+    <input type="hidden" name="zipcode" value="{{singleWelcome.zipcode}}" />
 
-<a href="/Welcome/{{singleWelcome._id}}/edit">
-    <button>Update Account Information</button>
-</a>
+    <form method="POST" action="/Welcome/{{singleWelcome._id}}?_method=DELETE">
+        <div class="btn-container">
+            <input class="signup_btn" type="submit" value="Delete Account" />
+        </div>
+    </form>
+
+    <a href="/Welcome/{{singleWelcome._id}}/edit">
+        <div class="btn-container">
+            <input class="signup_btn" type="submit" value="Update Account" />
+        </div>

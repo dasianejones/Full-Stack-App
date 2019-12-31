@@ -53,7 +53,7 @@ welcomeRouter.post("/", (req, res) => {
   welcomeApi
     .createWelcome(newWelcome)
     .then(() => {
-      res.redirect("/welcome");
+      res.redirect("/signUp");
     })
     .catch(error => {
       console.log(error);

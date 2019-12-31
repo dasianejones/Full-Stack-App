@@ -1,18 +1,21 @@
-<h2>Email:</h2>
-<div>{{singlesignUp.email}}</div>
+<div class="signup-containers">
 
-<h2>Phone Number:</h2>
-<div>{{singlesignUp.phonenumber}}</div>
+    <label class="form-label" for="bankname"></label>
+    <input type="hidden" name="bankname" value="{{singlesignUp.email}}" />
 
-<h2>Password:</h2>
-<div>{{singlesignUp.password}}</div>
+    <label class="form-label" for="bankname"></label>
+    <input type="hidden" name="bankaccount" value="{{singlesignUp.phonenumber}}" />
 
-<form method="POST" action="/signUp/{{singlesignUp._id}}?_method=DELETE">
-    <input class="signup_btn" type="submit" value="Delete New Account">
-</form>
+    <label class="form-label" for="bankname"></label>
+    <input type="hidden" name="bankrouting" value="{{singlesignUp.password}}" />
 
-<a href="/signUp/{{singlesignUp._id}}/edit">
-    <div class="btn-container">
-        <button class="signup_btn"> Edit Login Information </button>
-    </div>
-</a>
+    <form method="POST" action="/signUp/{{singlesignUp._id}}?_method=DELETE">
+        <div class="btn-container">
+            <input class="signup_btn" type="submit" value="Delete Account" />
+        </div>
+    </form>
+
+    <a href="/signUp/{{singlesignUp._id}}/edit">
+        <div class="btn-container">
+            <input class="signup_btn" type="submit" value="Edit Account" />
+        </div>

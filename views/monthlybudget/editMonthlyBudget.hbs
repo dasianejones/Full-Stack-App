@@ -1,12 +1,27 @@
 <h1>Edit MonthlyBudget</h1>
 
+
 <form method="POST" action="/MonthlyBudget/{{monthlyBudget._id}}?_method=PUT">
 
-  <input type="number" placeholder="monthlyincome" name="monthlyincome" value="{{monthlyBudget.monthlyincome}}" />
+  <div class="signup-containers">
+    <div class="signup-variables">
 
-  <input type="text" placeholder="monthlyexpenses" name="monthlyexpenses" value="{{monthlyBudget.monthlyexpenses}}" />
+      <label class="form-label" for="monthlyincome">Monthly Income</label>
+      <input type="text" placeholder="monthlyincome" name="monthlyincome" value="{{monthlyBudget.monthlyincome}}" />
 
-  <input type="number" placeholder="monthlybudget" name="monthlybudget" value="{{monthlyBudget.monthlybudget}}" />
+      <label class="form-label" for="monthlyexpenses">Monthly Expenses</label>
+      <input type="text" placeholder="monthlyexpenses" name="monthlyexpenses"
+        value="{{monthlyBudget.monthlyexpenses}}" />
 
-  <input type="submit" value="Save" />
+      <label class="form-label" for="monthlybudget">Monthly Budget</label>
+      <input type="text" placeholder="monthlybudget" name="monthlybudget" value="{{monthlyBudget.monthlybudget}}" />
+
+      <div class="btn-container">
+        <input input class="signup_btn" type="submit" value="Submit" />
+      </div>
+
+
+    </div>
+    <div>
+
 </form>

@@ -1,16 +1,23 @@
-<h2>Monthly Income:</h2>
-<div>{{singleMonthlyBudget.monthlyincome}}</div>
+<div class="signup-containers">
 
-<h2>Monthly Expenses:</h2>
-<div>{{singleMonthlyBudget.monthlyexpenses}}</div>
+    <label class="form-label" for="monthlyincome"></label>
+    <input type="hidden" name="bankname" value="{{singleMonthlyBudget.monthlyincome}}" />
 
-<h2>Monthly Budget:</h2>
-<div>{{singleMonthlyBudget.monthlybudget}}</div>
+    <label class="form-label" for="monthlyexpenses"></label>
+    <input type="hidden" name="bankname" value="{{singleMonthlyBudget.monthlyexpenses}}" />
 
-<form method="POST" action="/MonthlyBudget/{{singleMonthlyBudget._id}}?_method=DELETE">
-    <input type="submit" value="Delete Monthly Expense Information">
-</form>
+    <label class="form-label" for="monthlybudget"></label>
+    <input type="hidden" name="bankname" value="{{singleMonthlyBudget.monthlybudget}}" />
 
-<a href="/MonthlyBudget/{{singleMonthlyBudget._id}}/edit">
-    <button>Update Monthly Expense Information</button>
-</a>
+
+    <form method="POST" action="/MonthlyBudget/{{singleMonthlyBudget._id}}?_method=DELETE">
+        <div class="btn-container">
+            <input class="signup_btn" type="submit" value="Delete Monthly Expense">
+        </div>
+    </form>
+
+    <a href="/MonthlyBudget/{{singleMonthlyBudget._id}}/edit">
+        <div class="btn-container">
+            <input class="signup_btn" type="submit" value="Update Monthly Expense" />
+        </div>
+    </a>
