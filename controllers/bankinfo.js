@@ -8,7 +8,7 @@ bankInfoRouter.get("/", (req, res) => {
   bankInfoApi
     .getAllBankInfo()
     .then(allbankInfo => {
-      res.render("bankInfo/allbankInfo", { allbankInfo });
+      res.render("bankinfo/allBankInfo", { allbankInfo });
     })
     .catch(error => {
       console.log("Error getting all bankInfo");
@@ -18,14 +18,14 @@ bankInfoRouter.get("/", (req, res) => {
 });
 
 bankInfoRouter.get("/new", (req, res) => {
-  res.render("bankInfo/createbankInfo");
+  res.render("bankinfo/createBankInfo");
 });
 
 bankInfoRouter.get("/:id/edit", (req, res) => {
   bankInfoApi
     .getBankInfoById(req.params.id)
     .then(bankInfo => {
-      res.render("bankInfo/editbankInfo", { bankInfo });
+      res.render("bankinfo/editBankInfo", { bankInfo });
     })
     .catch(error => {
       console.log(error);
@@ -38,7 +38,7 @@ bankInfoRouter.get("/:id", (req, res) => {
   bankInfoApi
     .getBankInfoById(req.params.id)
     .then(singlebankInfo => {
-      res.render("bankInfo/singlebankInfo", { singlebankInfo });
+      res.render("bankinfo/singleBankInfo", { singlebankInfo });
     })
     .catch(error => {
       console.log("Error getting single bankInfo");
