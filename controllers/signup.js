@@ -18,14 +18,14 @@ signUpRouter.get("/", (req, res) => {
 });
 
 signUpRouter.get("/new", (req, res) => {
-  res.render("signUp/createsignUp");
+  res.render("signUp/createSignup");
 });
 
 signUpRouter.get("/:id/edit", (req, res) => {
   signUpApi
     .getSignUpById(req.params.id)
     .then(signUp => {
-      res.render("signUp/editsignUp", { signUp });
+      res.render("signUp/editSignup", { signUp });
     })
     .catch(error => {
       console.log(error);
@@ -38,7 +38,7 @@ signUpRouter.get("/:id", (req, res) => {
   signUpApi
     .getSignUpById(req.params.id)
     .then(singlesignUp => {
-      res.render("signUp/singlesignUp", { singlesignUp });
+      res.render("signup/singleSignup", { singlesignUp });
     })
     .catch(error => {
       console.log("Error getting single signUp");
