@@ -51,7 +51,7 @@ h1 {
 }
 
 .bottom-navbar a:hover {
-  background-color: rgb(190, 183, 183);
+  background-color: rgb(189, 244, 180);
   color: black;
 }
 
@@ -171,6 +171,7 @@ a:active {
 }
 
 .login-variables {
+  background-color: white;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
