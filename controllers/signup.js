@@ -25,7 +25,7 @@ signUpRouter.get("/:id/edit", (req, res) => {
   signUpApi
     .getSignUpById(req.params.id)
     .then(signUp => {
-      res.render("signUp/editSignup", { signUp });
+      res.render("signup/editSignup", { signUp });
     })
     .catch(error => {
       console.log(error);
