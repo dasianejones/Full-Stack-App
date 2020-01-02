@@ -14,7 +14,7 @@ OVERVIEW
 
 Objective of this project was to use MongoDB, MVC, and Handlebars skills to create a functioning app that could be deployed via the cloud on Heroku. I created my own rendition of an Expense Tracker App based on how I would like to improve my spending habits.
 
-![appPictures]()
+![appPictures](IMG-2618.png)
 
 ERD Picture
 
