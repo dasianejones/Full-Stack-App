@@ -18,7 +18,7 @@ signUpRouter.get("/", (req, res) => {
 });
 
 signUpRouter.get("/new", (req, res) => {
-  res.render("signUp/createSignup");
+  res.render("signup/createSignup");
 });
 
 signUpRouter.get("/:id/edit", (req, res) => {
