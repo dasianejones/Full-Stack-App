@@ -14,3 +14,11 @@
     opacity: 1;
   }
 }
+
+p {
+  text-align: center;
+}
+
+.about-us-description {
+  text-align: center;
+}
