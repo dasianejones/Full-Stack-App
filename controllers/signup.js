@@ -8,7 +8,7 @@ signUpRouter.get("/", (req, res) => {
   signUpApi
     .getAllSignUp()
     .then(allsignUp => {
-      res.render("signUp/allSignUp", { allsignUp });
+      res.render("signup/allSignUp", { allsignUp });
     })
     .catch(error => {
       console.log("Error getting all signUp");
