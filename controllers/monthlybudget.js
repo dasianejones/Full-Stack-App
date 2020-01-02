@@ -9,7 +9,7 @@ monthlyBudgetRouter.get("/", (req, res) => {
     .getAllMonthlyBudget()
     .then(allMonthlyBudget => {
       console.log(allMonthlyBudget);
-      res.render("monthlyBudget/allmonthlyBudget", { allMonthlyBudget });
+      res.render("monthlybudget/allMonthlyBudget", { allMonthlyBudget });
     })
     .catch(error => {
       console.log("Error getting all monthlyBudget");
@@ -19,14 +19,14 @@ monthlyBudgetRouter.get("/", (req, res) => {
 });
 
 monthlyBudgetRouter.get("/new", (req, res) => {
-  res.render("monthlyBudget/createmonthlyBudget");
+  res.render("monthlybudget/createMonthlyBudget");
 });
 
 monthlyBudgetRouter.get("/:id/edit", (req, res) => {
   monthlyBudgetApi
     .getMonthlyBudgetById(req.params.id)
     .then(monthlyBudget => {
-      res.render("monthlyBudget/editmonthlyBudget", { monthlyBudget });
+      res.render("monthlybudget/editMonthlyBudget", { monthlyBudget });
     })
     .catch(error => {
       console.log(error);
@@ -39,7 +39,7 @@ monthlyBudgetRouter.get("/:id", (req, res) => {
   monthlyBudgetApi
     .getMonthlyBudgetById(req.params.id)
     .then(singleMonthlyBudget => {
-      res.render("monthlyBudget/singlemonthlyBudget", { singleMonthlyBudget });
+      res.render("monthlybudget/singleMonthlyBudget", { singleMonthlyBudget });
     })
     .catch(error => {
       console.log("Error getting single monthlyBudget");
