@@ -1,0 +1,30 @@
+<div class="signup-title">Let's Get To Know You Better!</div>
+
+
+<div class="btn-container">
+    <div class="new-acct-btn">
+        <a href="/signUp/new">
+            <button type="button" class="signup_btn">Add Account Details</button>
+        </a>
+
+    </div>
+</div>
+
+
+
+
+
+<ul>
+    {{#each allsignUp}}
+
+    <li>
+        <a href="/signUp/{{_id}}">
+            {{_id}}
+        </a>
+        <h3>{{phonenumber}}</h3>
+        <h3>{{password}}</h3>
+
+    </li>
+
+    {{/each}}
+</ul>

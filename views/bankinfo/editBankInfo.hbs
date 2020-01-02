@@ -1,0 +1,24 @@
+<h1>Update Bank Account</h1>
+
+<form method="POST" action="/bankInfo/{{bankInfo._id}}?_method=PUT">
+
+  <div class="signup-containers">
+    <div class="signup-variables">
+
+      <label class="form-label" for="bankname">Bank Name</label>
+      <input type="text" placeholder="bankname" name="bankname" value="{{bankInfo.bankname}}" />
+
+      <label class="form-label" for="bankname">Bank Account</label>
+      <input type="text" placeholder="bankaccount" name="bankaccount" value="{{bankInfo.bankaccount}}" />
+
+      <label class="form-label" for="bankname">Bank Routing</label>
+      <input type="text" placeholder="bankrouting" name="bankrouting" value="{{bankInfo.bankrouting}}" />
+
+      <div class="btn-container">
+        <input class="signup_btn" type="submit" value="Save" />
+      </div>
+
+
+    </div>
+  </div>
+</form>

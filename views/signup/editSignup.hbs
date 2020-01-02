@@ -1,0 +1,25 @@
+<h1>Update Login Account Information</h1>
+
+
+<form method="POST" action="/signUp/{{signUp._id}}?_method=PUT">
+
+  <div class="signup-containers">
+    <div class="signup-variables">
+
+      <label class="form-label" for="bankname">Email</label>
+      <input type="text" placeholder="email" name="email" value="{{signUp.email}}" />
+
+      <label class="form-label" for="bankname">Phone Number</label>
+      <input type="number" placeholder="phonenumber" name="phonenumber" value="{{signUp.phonenumber}}" />
+
+      <label class="form-label" for="bankname">Password</label>
+      <input type="password" placeholder="password" name="password" value="{{signUp.password}}" />
+
+      <div class="btn-container">
+        <input class="signup_btn" type="submit" value="Save" />
+      </div>
+
+    </div>
+  </div>
+
+</form>

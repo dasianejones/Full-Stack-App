@@ -1,0 +1,49 @@
+<h1>Login</h1>
+
+<form method="POST" action="/login">
+
+    <div class="signup-containers">
+        <div class="login-variables">
+
+            <label for="Email">Email</label>
+            <input type="text" value="" class="form-input-box" placeholder="email" name="email" id="email" />
+
+            <label for="Password">Password</label>
+            <input type="password" value="" class="form-input-box" placeholder="password" name="password"
+                id="password" />
+
+        </div>
+
+    </div>
+
+
+</form>
+
+<div class="btn-container">
+    <div class="new-acct-btn">
+        <a href="/login/new">
+            <button type="button" class="signup_btn">Login</button>
+        </a>
+
+    </div>
+</div>
+
+
+</a>
+
+<ul>
+    {{#each allLogin}}
+
+    <li>
+        <a href="/login/{{_id}}">
+            {{_id}}
+        </a>
+
+        <h3>{{email}}</h3>
+
+        <h3>{{password}}</h3>
+
+    </li>
+
+    {{/each}}
+</ul>
